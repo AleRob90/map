@@ -8,5 +8,5 @@ jobs:
       - run: |
               npm ci
               npm run build
-              npm run test
+              npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
               npm run lint
