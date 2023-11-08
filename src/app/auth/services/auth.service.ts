@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable, map, switchMap } from 'rxjs';
 import { HttpService } from 'src/app/shared/services/http.service';
 import { UserType } from 'src/app/shared/services/role.service';
@@ -36,7 +36,7 @@ export class AuthService {
 
   public user = this.user$.asObservable();
 
-  constructor(private readonly httpService: HttpService) {}
+  private readonly httpService = inject(HttpService);
 
   public isLogged(): boolean {
     return this.user$.value !== null;

@@ -9,5 +9,5 @@ import { RouterModule } from '@angular/router';
   standalone: true,
 })
 export class AppComponent {
-  title = 'map123';
+  title = 'map';
 }

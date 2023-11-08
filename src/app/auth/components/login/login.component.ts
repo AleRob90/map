@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { getEmailValidator } from '../../../shared/validators/common.validators';
 
 import { BehaviorSubject, catchError, finalize } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 interface LoginForm {
   email: EmailControl;
@@ -15,6 +16,7 @@ type EmailControl = FormControl<string>;
 type PasswordControl = FormControl<string>;
 
 @Component({
+  imports: [HttpClientModule],
   templateUrl: 'login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
