@@ -5,8 +5,8 @@ import { LoginComponent } from './login.component';
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-    imports: [RouterTestingModule, LoginComponent],
-})
+      imports: [RouterTestingModule, LoginComponent],
+    })
   );
 
   it('should create the login component', () => {
