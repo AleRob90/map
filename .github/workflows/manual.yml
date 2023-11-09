@@ -1,5 +1,9 @@
 name: Run Unit Tests and Lint Files
-"on": push
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
 jobs:
   unit_test-lint:
     runs-on: ubuntu-latest
@@ -8,5 +12,5 @@ jobs:
       - run: |
               npm ci
               npm run build
-              npm run test
+              npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
               npm run lint
